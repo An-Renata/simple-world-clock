@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
     <script defer src="src/script.js"></script>
     <script
       defer
@@ -17,9 +18,54 @@
   </head>
   <body>
     <h1>World Clock</h1>
+
+    <div class="container">
+      <select name="cities" id="cities">
+        <option value="">Select a city</option>
+        <option value="sydney">Sydney</option>
+        <option value="tokyo">Tokyo</option>
+        <option value="dubai">Dubai</option>
+        <option value="madrid">Madrid</option>
+      </select>
+
+      <div class="city-container">
+        <div class="city">
+          <h3 class="city-name">New York</h3>
+          <p class="date">March 4th, 2023</p>
+        </div>
+        <div class="city-time">
+          <p class="current-time">15:23:12 Am</p>
+        </div>
+      </div>
+
+      <div class="city-container">
+        <div class="city">
+          <h3 class="city-name">London</h3>
+          <p class="date">March 4th, 2023</p>
+        </div>
+        <div class="city-time">
+          <p class="current-time">15:23:12 Am</p>
+        </div>
+      </div>
+
+      <div class="city-container">
+        <div class="city">
+          <h3 class="city-name">Istanbul</h3>
+          <p class="date">March 4th, 2023</p>
+        </div>
+        <div class="city-time">
+          <p class="current-time">15:23:12 Am</p>
+        </div>
+      </div>
+    </div>
     <footer>
       <p>
-        Coded by Renata Andriušienė. Open source code on <a href="">GitHub</a>
+        Coded by Renata Andriušienė. Open source code on
+        <a
+          href="https://github.com/An-Renata/simple-world-clock"
+          target="_blank"
+          >GitHub</a
+        >
       </p>
     </footer>
   </body>

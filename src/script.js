@@ -111,7 +111,7 @@ const updateSelectElement = function (e) {
 
   clearInterval(updateInterval);
 
-  updateInterval = setInterval(updateTime, 1000, [city]);
+  // updateInterval = setInterval(updateTime, 1000, [city]);
   citiesContainer.insertAdjacentHTML("beforeend", html);
 };
 selectCityElement.addEventListener("change", updateSelectElement);

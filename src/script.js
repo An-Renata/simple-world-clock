@@ -88,7 +88,11 @@ renderCityTimeData(mainCities);
 
 const updateSelectElement = function (e) {
   const cityRowContainer = document.querySelectorAll(".city-container");
-  const city = e.target.value;
+  let city = e.target.value;
+
+  if (city === "current") {
+    city = moment.tz.guess();
+  }
 
   if (!city) return;
 
@@ -98,6 +102,6 @@ const updateSelectElement = function (e) {
 
   clearInterval(updateInterval);
   insertCityTimeData(city, citiesContainer);
-  setInterval(updateTime, 1000, [city]);
+  // setInterval(updateTime, 1000, [city]);
 };
 selectCityElement.addEventListener("change", updateSelectElement);

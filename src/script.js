@@ -102,6 +102,6 @@ const updateSelectElement = function (e) {
 
   clearInterval(updateInterval);
   insertCityTimeData(city, citiesContainer);
-  // setInterval(updateTime, 1000, [city]);
+  setInterval(updateTime, 1000, [city]);
 };
 selectCityElement.addEventListener("change", updateSelectElement);

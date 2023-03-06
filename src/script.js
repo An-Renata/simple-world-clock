@@ -39,7 +39,13 @@ const formatCityName = function (city) {
 function displaySelectInputs() {
   const cityNames = moment.tz.names();
 
-  cityNames.forEach((city) => {
+  const countryName = cityNames.map((city) => {
+    const name = timezoneToCityName(city);
+    return name;
+  });
+  const sortedContryNames = countryName.sort();
+
+  sortedContryNames.forEach((city) => {
     const updatedName = timezoneToCityName(city);
     if (updatedName === "") return;
 
@@ -97,11 +103,19 @@ const updateSelectElement = function (e) {
   if (!city) return;
 
   cityRowContainer.forEach((el) => {
-    el.style.display = "none";
+    el.remove();
   });
 
   clearInterval(updateInterval);
   insertCityTimeData(city, citiesContainer);
-  setInterval(updateTime, 1000, [city]);
+
+  updateInterval = setInterval(() => {
+    const cityRowContainer = document.querySelectorAll(".city-container");
+
+    cityRowContainer.forEach((el) => {
+      el.remove();
+    });
+    insertCityTimeData(city, citiesContainer);
+  }, 1000);
 };
 selectCityElement.addEventListener("change", updateSelectElement);

@@ -39,14 +39,9 @@ const formatCityName = function (city) {
 function displaySelectInputs() {
   const cityNames = moment.tz.names();
 
-  const countryName = cityNames.map((city) => {
-    const name = timezoneToCityName(city);
-    return name;
-  });
-  const sortedContryNames = countryName.sort();
-
-  sortedContryNames.forEach((city) => {
+  cityNames.forEach((city) => {
     const updatedName = timezoneToCityName(city);
+
     if (updatedName === "") return;
 
     const html = `
